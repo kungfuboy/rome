@@ -1,2 +1,24 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<h1 class="">Sign up</h1>
+<div class="flex">
+  <%= form_with(model: @user, local: true) do |f| %>
+    <!-- Render error -->
+    <%= render 'shared/error_messages' %>
+    <!-- Render error -->
+    <div class="border flex">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class="border flex">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class="border flex">
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="border flex">
+      <%= f.submit "Create my account" %>
+    </div>
+  <% end %>
+</div>
